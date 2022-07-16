@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style-index.css">
+    <title>Indulgence</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="list">
+                <li class="navItem1"><a href="./index.html"><img src="./assets/logo.png" alt="logo" height="50"></a>
+                </li>
+                <li class="navItem2">
+                    <a href="./index.html">
+                        <h1>Indulgence</h1>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <form id="foodForm" method="post">
+            <label for="foodName">Dish Name:</label>
+            <input type="text" name="foodName" id="foodName">
+            <label for="foodType">Dish Type:</label>
+            <select name="foodType" id="foodType">
+                <option value="fruits and vegetables">Fruits and Vegetables</option>
+                <option value="starch">Starchy food</option>
+                <option value="dairy">Dairy</option>
+                <option value="proien">Protien</option>
+                <option value="fat">Fat</option>
+            </select>
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price">
+            <button type="submit">Submit</button>
+        </form>
+        <table id="renderTable" class="hidden">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Price</th>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        <address class="address">
+            <div class="add1">
+                <img src="./assets/location.png" alt="location" height="30">
+                Busi Ness, 666 St.
+            </div>
+            <div class="add2">
+                <img src="./assets/phone.png" alt="phone" height="30">
+                ++96279999999999999
+            </div>
+        </address>
+    </footer>
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
