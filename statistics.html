@@ -22,30 +22,21 @@
                     </a>
                 </li>
                 <li class="navItem3">
-                    <a href="./statistics.html">View Dishes</a>
+                    <a href="./index.html">Add Dish</a>
                 </li>
             </ul>
         </nav>
     </header>
-
     <div class="content">
-        <form id="foodForm" method="post">
-            <label for="foodName">Dish Name:</label>
-            <input type="text" name="foodName" id="foodName">
-            <label for="foodType">Dish Type:</label>
-            <select name="foodType" id="foodType">
-                <option value="fruits and vegetables">Fruits and Vegetables</option>
-                <option value="starch">Starchy food</option>
-                <option value="dairy">Dairy</option>
-                <option value="proien">Protien</option>
-                <option value="fat">Fat</option>
-            </select>
-            <label for="price">Price:</label>
-            <input type="number" name="price" id="price">
-            <button type="submit">Submit</button>
-        </form>
+        <table id="renderTable" class="table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Price</th>
+            </tr>
+        </table>
     </div>
-
     <footer>
         <address class="address">
             <div class="add1">
@@ -58,7 +49,7 @@
             </div>
         </address>
     </footer>
-    <script src="./js/app.js"></script>
+    <script src="./js/statistics.js"></script>
 </body>
 
 </html>

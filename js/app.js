@@ -2,7 +2,11 @@
 
 //selectors
 const foodForm = document.querySelector('#foodForm')
+const oldData = JSON.parse(localStorage.getItem('dishes'))
 const foodList = []
+if (oldData) {
+    foodList.push(...oldData)
+}
 
 //constructor
 const Dish = function (foodName, foodType, price) {
@@ -13,40 +17,20 @@ const Dish = function (foodName, foodType, price) {
     foodList.push(this)
 }
 
-//table rendering
-const renderTable = document.querySelector('#renderTable')
+//data-storing function
+const storeData = function (arr) {
+    localStorage.setItem('dishes', JSON.stringify(arr))
+
+}
+
+
+//form data
 foodForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    renderTable.classList.remove('hidden')
     const dish = new Dish(e.target.foodName.value, e.target.foodType.value, e.target.price.value)
-    fillRender(renderTable, dish)
+    storeData(foodList)
+    e.target.foodName.value = ''
+    e.target.price.value = ''
 })
 
-function createCells(rowName) {
-    const cells = new Array()
-    for (let i = 0; i < 4; i++) {
-        let cell = rowName.insertCell()
-        cells.push(cell)
-    }
-    return cells
-}
 
-
-function fillRender(table, element) {
-    let row = table.insertRow();
-
-    const cells = createCells(row)
-
-    //this needs to be refactored(mapping etc)....
-    let id = document.createTextNode(element.id)
-    let name = document.createTextNode(element.name)
-    let type = document.createTextNode(element.type)
-    let price = document.createTextNode(element.price)
-    cells[0].append(id)
-    cells[1].append(name)
-    cells[2].append(type)
-    cells[3].append(price)
-    //.....
-    row.append(...cells)
-
-}
